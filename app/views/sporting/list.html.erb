@@ -1,0 +1,14 @@
+<h1>Sporting#list</h1>
+<p>Find me in app/views/sporting/list.html.erb</p>
+<h1>Number of players: <%= @players_count %></h1>
+<form action="/sporting/list">
+	Player name:<br>
+	<input type="text" name="name" value="" placeholder="carlos-de-ourique"><br>
+	<input type="submit" value="Submit">
+</form>
+<ul>
+	<% @players.each_with_index do |p, index| %>
+	<li> <%= link_to p, show_player_path(id: index) %> </li>
+	<% end %>
+</ul>
+
